@@ -1,0 +1,6 @@
+Django>=5.0
+djangorestframework>=3.14.0
+djangorestframework-simplejwt>=5.3.1
+psycopg2>=2.9.9
+pytest-asyncio>=0.23.2
+pytest-django>=4.7.0
