@@ -43,11 +43,11 @@
     docker-compose up -d --build
     ```
 
-    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:80/api](http://localhost:80/api). From now on, any call made to [localhost:80/api](http://localhost:80/api) will be redirected to __Django__ while every other path (localhost:80/*) will lead to the __React__ frontend.
+    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:80/api](http://localhost:8080/api).
 
 2. To create a super user:
     ```bash
-    docker exec -it [container id] python manage.py createsuperuser
+    docker exec -it [container id of the postgresql] python manage.py createsuperuser
     ```
     You can get container id from `docker container list`
 
@@ -57,13 +57,9 @@
 ## Docker-Compose
 
 This repository is divided into 3 main folders. These folders are:
-- __django_backend:__ Has the Django project created with ``django-admin startproject``.
-- __react_frontend:__ Has the React project create with ``npx create-react-app``.
-- __nginx:__ Has the Dockerfile used in the docker-compose.yml file and the default config to run Django + React. When running the project locally without Docker this folder can be ignored.
-
-Each project (Django and React as separate projects) is intended to be self contained, and so it can be separately tested  without the need of docker-compose.
-
-When running with __Docker Compose__, there are 4 images that are created: A Django backend Image, a React frontend Image, a Nginx Image, and a PostgreSQL Image. The Dockerfiles for Django, React, and Nginx can be found in their respective folders, i.e, the Django Dockerfile is inside the django_backend folder, and so on. The PostgreSQL image has no custom Dockerfile, instead it is pulled from the Docker Hub, and the environment variables for the docker-compose file can be found at the .env file in the project root folder.
+- __backend:__ Has the Django project created with ``django-admin startproject``.
+- __frontend:__ Has the React project create with ``npx create-react-app``.
+- __nginx:__ Has the Dockerfile used in the docker-compose.yml file and the default config to run Django + React.
 
 Enter shell for specified container (must be running)
 
@@ -72,7 +68,7 @@ Enter shell for specified container (must be running)
 $> docker exec -it <container-name> sh
 
 ```
-### Containers, Services and Ports
+Containers, Services and Ports
 
 | Container  | Service | Host Port | Docker Port |
 | ---------- | ------- | --------- | ----------- |
@@ -89,8 +85,7 @@ $> docker exec -it <container-name> sh
 - Github repo to Dockerize Django + MySQL + Nginx + React js: [Ceci-Aguilera/django-react-nginx-mysql-docker](https://github.com/Ceci-Aguilera/django-react-nginx-mysql-docker)
 - Michael Herman article on testdriven.io: [dockerizing-django-with-postgres-gunicorn-and-nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
-
-### To-Do
+## To-Do
 
 - Deployment
 - CI/CD
