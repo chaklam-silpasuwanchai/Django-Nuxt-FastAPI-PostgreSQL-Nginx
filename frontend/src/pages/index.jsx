@@ -5,9 +5,9 @@ import { Button, Row, Col, Form, InputGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
-
+    
     return (
-        <div>hello</div>
+        <div>hello omg</div>
     )
 
 

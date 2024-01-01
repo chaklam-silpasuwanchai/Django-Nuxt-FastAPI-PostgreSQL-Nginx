@@ -24,6 +24,8 @@
     - Axios (To make calls to the Django Backend)
     - Hot reload
 
+    If you want to install more stuffs, simply `np install [pkg]` locally.  Then observe that `package.json` got changed.  Docker will pick it up and install them on the container once you `docker compose build` again.
+
 - __Nginx:__ This is the server for the Docker-Compose testing build. The default configuration in use can be found at the __nginx/nginx.conf__ file.  Serves Django's static and media files as well.  See conf for details.
 
 - __PostgreSQL:__ This is the default configured database for this repository
