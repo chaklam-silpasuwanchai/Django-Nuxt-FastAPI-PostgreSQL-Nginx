@@ -7,7 +7,7 @@ function SidebarComponent(props) {
       <Sidebar.Collapse getScrollValue={500}>
         <Sidebar.Header>
           <Sidebar.Brand>
-          <img src={RandomImage} style={{ marginRight: "10px" }} alt="" width="30" height="24" class="d-inline-block align-text-top"></img>
+          <img src={RandomImage} style={{ marginRight: "10px" }} alt="" width="30" height="24" className="d-inline-block align-text-top"></img>
           ESG Reporting
           </Sidebar.Brand>
           <Sidebar.Toggle />

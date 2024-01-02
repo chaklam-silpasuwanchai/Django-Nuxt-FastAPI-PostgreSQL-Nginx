@@ -7,17 +7,21 @@ import {
   faMaskVentilator,
   faBolt,
   faArrowsSpin,
+  faDashboard
 } from "@fortawesome/free-solid-svg-icons";
 
 function DashcardComponent() {
   const mask = <FontAwesomeIcon icon={faMaskVentilator} color="green" size="3x" />;
   const bolt = <FontAwesomeIcon icon={faBolt} color="#ffc107" size="3x" />;
   const recycle = <FontAwesomeIcon icon={faArrowsSpin} color="#dc3545" size="3x" />;
+  const board = <FontAwesomeIcon icon={faDashboard} color="#dc3545" size="lg" />;
 
   const now = 60;
   const now2 = 39;
   const now3 = 11;
   return (
+    <div>
+    <div className="table-title mb-1 shadow-sm rounded">{board} Stats</div>
     <Row>
       <Col xs={4}>
         <Card className="shadow p-3">
@@ -65,6 +69,7 @@ function DashcardComponent() {
         </Card>
       </Col>
     </Row>
+    </div>
   );
 }
 

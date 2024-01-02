@@ -2,6 +2,10 @@
 //@import "~react-bootstrap-sidebar-menu/dist/sidebar-menu";
 @import "./sidebar-menu";
 
+$standard-font-size: 14px !default;
+$border-radius: 0.375rem;
+
+
 html, body, #root {
   padding: 0;
   width: 100%;
@@ -60,7 +64,7 @@ html, body, #root {
 }
 
 .breadcrumb-item{
-  font-size: 14px;
+  font-size: $standard-font-size;
 }
 
 .breadcrumb-item a{
@@ -70,7 +74,7 @@ html, body, #root {
 
 .card-title{
   color: #aaa;
-  font-size: 14px;
+  font-size: $standard-font-size;
 }
 
 .card-subtitle{
@@ -87,10 +91,49 @@ html, body, #root {
 }
 
 .section{
-  margin-top: 1px;
+  margin-top: 10px;
 }
 
 .dashboard{
   padding: 30px;
   background-color: #eee;
+}
+
+.crud-icon{
+  margin-right: 5px;
+  border: 1px solid silver;
+  padding: 0.25em;
+  border-radius: 0.25em
+}
+
+.icon-next-to-word{
+  margin-right: 5px;
+}
+
+table td{
+  font-size: $standard-font-size;
+}
+
+table th{
+  font-size: $standard-font-size;
+  font-weight: bold;
+}
+
+.table-title{
+  font-size: $standard-font-size;
+  color: #666;
+  border: 0.5px solid silver;
+  padding: 10px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.my-table{
+  border: 1px solid silver;
+  border-radius: 5px ;
+  overflow: hidden;
+}
+
+.dropdown-item{
+  font-size: $standard-font-size;
 }
