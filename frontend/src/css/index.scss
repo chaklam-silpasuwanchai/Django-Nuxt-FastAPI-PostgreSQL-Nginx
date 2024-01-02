@@ -48,13 +48,14 @@ html, body, #root {
 
 .footer{
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 5px;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
   color: #aaa;
+  height: 30px;
 }
 
 // Custom;  Try to avoid customizing, and instead use what bootstrap offers
