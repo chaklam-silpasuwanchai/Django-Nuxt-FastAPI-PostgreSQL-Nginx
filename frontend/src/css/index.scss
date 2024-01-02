@@ -32,6 +32,7 @@ html, body, #root {
   overflow: auto;
   padding-top: 1rem;
   min-height: 900px;
+  padding-left: 30px;
 }
 
 .sidebar-menu {
@@ -65,4 +66,32 @@ html, body, #root {
 .breadcrumb-item a{
   color: #aaa;
   text-decoration: none;
+}
+
+.card-title{
+  color: #aaa;
+  font-size: 14px;
+}
+
+.card-subtitle{
+  font-size: 36px;
+}
+
+.units{
+  font-size: 10px;
+  color: #aaa;
+}
+
+.card-icon{
+  float: right;
+}
+
+.section{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.dashboard{
+  padding: 30px;
+  background-color: #eee;
 }
