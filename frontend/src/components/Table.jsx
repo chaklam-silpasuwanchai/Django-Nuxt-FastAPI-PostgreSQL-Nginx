@@ -1,18 +1,10 @@
-import Table from 'react-bootstrap/Table';
+import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGear,
-  faBell,
-  faHouse,
-  faGlobe,
-  faSignOut,
-  faSignIn,
-  faUser,
-  faBolt,
-  faHeart
-} from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function TableComponent() {
+  const eye = <FontAwesomeIcon icon={faEye} color="green"/>;
+
   return (
     <Table striped bordered hover>
       <thead>
@@ -30,7 +22,7 @@ function TableComponent() {
           <td>SCB Sustainability Report</td>
           <td>0.1.0</td>
           <td>April 20, 2012</td>
-          <td>View | Edit | Delete </td>
+          <td>{eye} | Edit | Delete </td>
         </tr>
         <tr>
           <td>2</td>
