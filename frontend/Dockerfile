@@ -2,10 +2,10 @@
 FROM node:lts-slim
 
 # set work directory
-WORKDIR /srv/app/
+WORKDIR /src/app/
 
 # add to $PATH
-ENV PATH /srv/app/node_modules/.bin:$PATH
+ENV PATH /src/app/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package.json ./

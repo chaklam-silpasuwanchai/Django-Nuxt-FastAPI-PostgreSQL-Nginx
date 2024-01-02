@@ -10,9 +10,9 @@ services:
     env_file:
       - ./.env.dev
     volumes:
-      - ./backend/:/srv/app
-      - static:/srv/app/static
-      - media:/srv/app/media
+      - ./backend/:/src/app
+      - static:/src/app/static
+      - media:/src/app/media
     depends_on:
       - db
   react:
@@ -27,8 +27,8 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
     volumes:
-      - ./frontend/:/srv/app
-      - node_modules:/srv/app/node_modules
+      - ./frontend/:/src/app
+      - node_modules:/src/app/node_modules
     depends_on:
       - django
   db:
@@ -46,8 +46,8 @@ services:
       - 8080:80
     restart: always
     volumes:
-      - static:/srv/app/static
-      - media:/srv/app/media
+      - static:/src/app/static
+      - media:/src/app/media
     depends_on:
       - django
       - react

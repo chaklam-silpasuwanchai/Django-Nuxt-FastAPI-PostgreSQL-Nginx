@@ -10,25 +10,15 @@
 <a name="tech_stack"></a>
 ## Tech Stack
 
-- __Django:__ This is the backbone of the backend api, and has the following packages installed:
-    - Django Rest Framework (For the Rest API)
-    - Django-Cors-Headers (For the CORS config to allow React js to make calls)
-    - Django-Environ (To Fetch the environment variables in the settings.py files)
-    - Psycopg2-binary (To manage the PostgreSQL Database)
-    - PyTest (To test)
+- __Django:__ This is the backbone of the backend api, and the packages installed are specified in the _requirements.txt_ file inside the __backend__ folder.
 
-    __Note:__ All this packages are specified in the _requirements.txt_ file inside the __django_backend__ folder.
+- __React:__ The __frontend__ library in use. This was created via ``npx create-react-app``. The things pre-installed can be found in __package.json__.
 
-- __React:__ The frontend library in use. This was created via ``npx create-react-app``. The only extra packages that were installed (ignoring the ones that are automatically pre-installed) are:
-    - Bootstrap and React-Bootstrap (For styling)
-    - Axios (To make calls to the Django Backend)
-    - Hot reload
-
-    If you want to install more stuffs, simply `np install [pkg]` locally.  Then observe that `package.json` got changed.  Docker will pick it up and install them on the container once you `docker compose build` again.
+  If you want to install more stuffs, simply `npm install [pkg]` locally at the `frontend` directory.  Then observe that `package.json` got changed.  Docker will pick it up and install them on the container once you `docker compose build` again.  If things do not install, simply delete all the associated volumes and images, and delete the __node_modules__ folders, and `docker compose build` from scratch.  It works well for me.
 
 - __Nginx:__ This is the server for the Docker-Compose testing build. The default configuration in use can be found at the __nginx/nginx.conf__ file.  Serves Django's static and media files as well.  See conf for details.
 
-- __PostgreSQL:__ This is the default configured database for this repository
+- __PostgreSQL:__ This is the default configured database for this repository.
 
 ## Architecture
 
@@ -61,7 +51,7 @@
 This repository is divided into 3 main folders. These folders are:
 - __backend:__ Has the Django project created with ``django-admin startproject``.
 - __frontend:__ Has the React project create with ``npx create-react-app``.
-- __nginx:__ Has the Dockerfile used in the docker-compose.yml file and the default config to run Django + React.
+- __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the default config to run Django + React.
 
 Enter shell for specified container (must be running)
 

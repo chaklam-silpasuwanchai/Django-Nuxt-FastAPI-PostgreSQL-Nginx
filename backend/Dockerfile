@@ -2,7 +2,7 @@
 FROM python:3.11-slim-bullseye
 
 # set work directory
-WORKDIR /srv/app
+WORKDIR /src/app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -29,4 +29,4 @@ COPY ./entrypoint.sh .
 COPY . .
 
 # run entrypoint.sh
-ENTRYPOINT ["/srv/app/entrypoint.sh"]
+ENTRYPOINT ["/src/app/entrypoint.sh"]
