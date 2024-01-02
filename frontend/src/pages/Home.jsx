@@ -3,15 +3,16 @@ import Main from "../components/Main";
 import NavbarComponent from "../components/Navbar"
 import SidebarComponent from "../components/Sidebar"
 import { FooterComponent } from "../components/Footer";
-
+import BreadcrumbComponent from "../components/Breadcrumb";
 
 export default function App() {
-  const theme = "dark";
+  // const theme = {bg: "light" , color: "#222"};  later on for dark mode and light mode
   return (
     <Layout>
-      <NavbarComponent  theme={theme}/>
-      <SidebarComponent theme={theme}/>
+      <NavbarComponent/>
+      <SidebarComponent/>
       <Main>
+      <BreadcrumbComponent />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
           dicta minima molestiae nesciunt repellendus ipsum. Itaque culpa
@@ -32,7 +33,7 @@ export default function App() {
           optio eligendi dignissimos quas sed voluptate?
         </p>
       </Main>
-      <FooterComponent  theme={theme}/>
+      <FooterComponent/>
     </Layout>
   );
 }
