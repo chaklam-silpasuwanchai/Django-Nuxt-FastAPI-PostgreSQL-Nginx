@@ -79,13 +79,17 @@ Containers, Services and Ports
 
 ## Useful Links
 
+There is nothing original here; I simply collect the best practices from the best.  Some GitHubs are outdated so I have to update them.
+
 - Github repo of sunilale0: [sunilale0/django-postgresql-gunicorn-nginx-dockerized](https://github.com/sunilale0/django-postgresql-gunicorn-nginx-dockerized/blob/master/README.md#nginx)
 
 - Github repo to Dockerize Django + MySQL + Nginx + React js: [Ceci-Aguilera/django-react-nginx-mysql-docker](https://github.com/Ceci-Aguilera/django-react-nginx-mysql-docker)
 
 - Michael Herman's article on testdriven.io: [dockerizing-django-with-postgres-gunicorn-and-nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
+- Coby's GitHub - [https://github.com/cglusky/docker-django-react](https://github.com/cglusky/docker-django-react)
+
 ## To-Do
 
-- Deployment
-- CI/CD
+- Deployment to Cloud
+- Setup CI/CD using GitHub Actions
