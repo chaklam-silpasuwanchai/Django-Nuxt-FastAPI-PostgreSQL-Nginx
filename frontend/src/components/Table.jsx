@@ -84,10 +84,10 @@ function TableComponent() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
-            <tr key={index}>
+          {data.map((item) => (
+            <tr key={item.id}>
               {Object.keys(item).map((key) => (
-                <td key={index}>
+                <td key={key}>
                   {key === "last_updated"
                     ? formatLastUpdated(item[key])
                     : item[key]}

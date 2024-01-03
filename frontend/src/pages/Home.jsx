@@ -14,7 +14,7 @@ export default function HomePage() {
       <NavbarComponent />
       <SidebarComponent />
       <Main>
-        <div className="section">
+        <div className="breadcrumb">
           <BreadcrumbComponent />
         </div>
         <div className="section dashboard">

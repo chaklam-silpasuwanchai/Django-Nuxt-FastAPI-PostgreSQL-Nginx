@@ -2,8 +2,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Badge from 'react-bootstrap/Badge';
+import Badge from "react-bootstrap/Badge";
 import ChakyImage from "../img/example_avatar.png";
+import { LinkContainer } from "react-router-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,7 +16,7 @@ import {
   faSignIn,
   faUser,
   faBolt,
-  faHeart
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
 function NavbarComponent(props) {
@@ -32,20 +33,19 @@ function NavbarComponent(props) {
   return (
     <Navbar
       className="main-header"
-      bg= "light"
-      data-bs-theme= "light"
+      bg="light"
+      data-bs-theme="light"
       sticky="top"
-      >
+    >
       <Container fluid>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link href="#home">
-              {house}
-            </Nav.Link>
+              <LinkContainer to="/">
+                <Nav.Link eventKey={1}>{house}</Nav.Link>
+              </LinkContainer>
             <Nav.Link href="#link">{bolt}</Nav.Link>
-            <NavDropdown title={heart}
-             id="basic-nav-dropdown">
+            <NavDropdown title={heart} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -60,14 +60,16 @@ function NavbarComponent(props) {
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end">
           <Nav className="me-2">
-            <NavDropdown
-              title={globe}
-              id="basic-nav-dropdown"
-            >
+            <NavDropdown title={globe} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Thai</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link">{bell}<Badge style={{ marginLeft: "5px" }} bg="primary">9</Badge></Nav.Link>
+            <Nav.Link href="#link">
+              {bell}
+              <Badge style={{ marginLeft: "5px" }} bg="primary">
+                9
+              </Badge>
+            </Nav.Link>
           </Nav>
           <Nav>
             <NavDropdown
@@ -87,8 +89,12 @@ function NavbarComponent(props) {
               className="profile"
               drop="lg-start"
             >
-              <NavDropdown.Item href="#action/3.1">{user} Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">{gear} Settings</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">
+                {user} Profile
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                {gear} Settings
+              </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.2">
                 {signin} Sign in another account

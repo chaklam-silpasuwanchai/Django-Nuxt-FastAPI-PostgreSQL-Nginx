@@ -12,10 +12,10 @@ export default function SomePage() {
       <NavbarComponent />
       <SidebarComponent />
       <Main>
-        <div className="section">
+        <div className="breadcrumb">
           <BreadcrumbComponent />
         </div>
-        <p>
+        <div className="section lot-of-text">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
           eligendi, ad rerum unde corporis exercitationem aut, ipsam et
           doloremque consectetur similique magni odio fugiat totam provident,
@@ -23,7 +23,7 @@ export default function SomePage() {
           adipisicing elit. Neque quae delectus, cum provident laboriosam at.
           Repudiandae esse veniam quam, reiciendis et facilis blanditiis ut
           optio eligendi dignissimos quas sed voluptate?
-        </p>
+        </div>
       </Main>
       <FooterComponent />
     </Layout>
