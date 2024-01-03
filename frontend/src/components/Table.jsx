@@ -6,6 +6,8 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faTableList } from "@fortawesome/free-solid-svg-icons";
 
+import React, { useEffect, useState } from "react";
+
 function TableComponent() {
   const eye = (
     <span className="crud-icon">
@@ -33,38 +35,38 @@ function TableComponent() {
     </span>
   );
 
-  const tableData = [
-    {
-      id: 1,
-      name: "SCB Sustainability Report",
-      version: "0.1.1",
-      updated: "April 20, 2012",
-    },
-    {
-      id: 2,
-      name: "SCB Sustainability Report",
-      version: "0.1.2",
-      updated: "May 20, 2012",
-    },
-    {
-      id: 3,
-      name: "SCB Sustainability Report",
-      version: "0.1.3",
-      updated: "July 20, 2012",
-    },
-    {
-      id: 4,
-      name: "SCB Sustainability Report",
-      version: "0.1.4",
-      updated: "August 20, 2012",
-    },
-    {
-      id: 5,
-      name: "SCB Sustainability Report",
-      version: "0.1.5",
-      updated: "Oct 20, 2012",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:8080/api/report/");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const formatLastUpdated = (lastUpdated) => {
+    const options = {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+    };
+    return new Date(lastUpdated).toLocaleDateString(undefined, options);
+  };
 
   return (
     <div>
@@ -74,20 +76,23 @@ function TableComponent() {
       <Table striped hover className="shadow-sm my-table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Report Name</th>
-            <th>Version</th>
-            <th>Last Updated</th>
+            {data.length > 0 &&
+              Object.keys(data[0]).map((key) => (
+                <th key={key}>{key === "id" ? "#" : key}</th>
+              ))}
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {tableData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.version}</td>
-              <td>{item.updated}</td>
+          {data.map((item, index) => (
+            <tr key={index}>
+              {Object.keys(item).map((key) => (
+                <td key={index}>
+                  {key === "last_updated"
+                    ? formatLastUpdated(item[key])
+                    : item[key]}
+                </td>
+              ))}
               <td>
                 {eye} {pen} {trash} {download}
               </td>

@@ -3,7 +3,7 @@ import RandomImage from "../img/logo192.png";
 
 function SidebarComponent(props) {
   return (
-    <Sidebar variant="dark" bg="dark" expand="sm">
+    <Sidebar variant="dark" bg="dark" expand="sm" expanded="defaultExpanded">
       <Sidebar.Collapse getScrollValue={500}>
         <Sidebar.Header>
           <Sidebar.Brand>
@@ -16,18 +16,18 @@ function SidebarComponent(props) {
           <Sidebar.Nav>
             <Sidebar.Nav.Link eventKey="menu_title">
               <Sidebar.Nav.Icon>1</Sidebar.Nav.Icon>
-              <Sidebar.Nav.Title>Menu Title</Sidebar.Nav.Title>
+              <Sidebar.Nav.Title>Overview</Sidebar.Nav.Title>
             </Sidebar.Nav.Link>
             <Sidebar.Sub eventKey={0}>
               <Sidebar.Sub.Toggle>
                 <Sidebar.Nav.Icon />
-                <Sidebar.Nav.Title>Submenu</Sidebar.Nav.Title>
+                <Sidebar.Nav.Title>Reports</Sidebar.Nav.Title>
               </Sidebar.Sub.Toggle>
               <Sidebar.Sub.Collapse>
                 <Sidebar.Nav>
                   <Sidebar.Nav.Link eventKey="sum_menu_title">
                     <Sidebar.Nav.Icon>1.1</Sidebar.Nav.Icon>
-                    <Sidebar.Nav.Title>Sub menu item</Sidebar.Nav.Title>
+                    <Sidebar.Nav.Title><a href="/somepage">Some Page</a></Sidebar.Nav.Title>
                   </Sidebar.Nav.Link>
                 </Sidebar.Nav>
               </Sidebar.Sub.Collapse>
