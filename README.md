@@ -6,15 +6,13 @@
 
 </div>
 
-
-<a name="tech_stack"></a>
 ## Tech Stack
 
-- __Django:__ This is the backbone of the backend api, and the packages installed are specified in the _requirements.txt_ file inside the __backend__ folder.
+- __Django:__ This is the backbone of the backend API, and the packages installed are specified in the _requirements.txt_ file inside the __backend__ folder.
 
 - __React:__ The __frontend__ library in use. This was created via ``npx create-react-app``. The things pre-installed can be found in __package.json__.
 
-  If you want to install more stuffs, simply `npm install [pkg]` locally at the `frontend` directory.  Then observe that `package.json` got changed.  Docker will pick it up and install them on the container once you `docker compose build` again.  If things do not install, simply delete all the associated volumes and images, and delete the __node_modules__ folders, and `docker compose build` from scratch.  It works well for me.
+  If you want to install more packages, simply `npm install [pkg]` locally at the `frontend` directory.  Then observe that `package.json` got changed.  Docker will pick it up and install it on the container once you `docker-compose build` again.  If things do not install, simply delete all the associated volumes and images, delete the __node_modules__ folders, and `docker-compose build` from scratch.  It works well for me.
 
 - __Nginx:__ This is the server for the Docker-Compose testing build. The default configuration in use can be found at the __nginx/nginx.conf__ file.  Serves Django's static and media files as well.  See conf for details.
 
@@ -24,42 +22,46 @@
 
 ![Architecture Image](./.readme_assets/Arch.png)
 
-
-<a name="docker"></a>
 ## Install (Run) with Docker
 
 1. Since I cannot share my `.env.dev` file with you guys, I have created an example. Rename `.env-example` to `.env.dev`
 
 1. Run Docker-Compose:
+
     ```bash
     docker-compose up -d --build
     ```
 
-    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api).  For production, turn off the api.
+    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api).  For production, turn off the API.
 
-2. To create a super user:
+1. To create a super user:
+
     ```bash
     docker exec -it [container id of the postgresql] python manage.py createsuperuser
     ```
-    You can get container id from `docker container list`
 
-    [localhost:8080/admin](http://localhost:8080/admin) is the url path that redirects to the Django Admin.  I highly recommends you to use this url, as it's very good for managing models.
+    You can get the container ID from `docker container list`
 
-<a name="structure"></a>
+    [localhost:8080/admin](http://localhost:8080/admin) is the URL path that redirects to the Django Admin.  I highly recommend you use this URL, as it's very good for managing models.
+
+    You do the same way every time you create models in Django.  
+
 ## Docker-Compose
 
 This repository is divided into 3 main folders. These folders are:
+
 - __backend:__ Has the Django project created with ``django-admin startproject``.
-- __frontend:__ Has the React project create with ``npx create-react-app``.
+
+- __frontend:__ Has the React project been created with ``npx create-react-app``
+
 - __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the default config to run Django + React.
 
-Enter shell for specified container (must be running)
+Enter shell for the specified container (must be running)
 
 ```sh
-
 $> docker exec -it <container-name> sh
-
 ```
+
 Containers, Services and Ports
 
 | Container  | Service | Host Port | Docker Port |
@@ -69,13 +71,13 @@ Containers, Services and Ports
 | dev-db     | db      | 5432      | 5432        |
 | dev-nginx  | nginx   | 8080      | 80          |
 
-
-<a name="useful_links"></a>
 ## Useful Links
 
 - Github repo of sunilale0: [sunilale0/django-postgresql-gunicorn-nginx-dockerized](https://github.com/sunilale0/django-postgresql-gunicorn-nginx-dockerized/blob/master/README.md#nginx)
+
 - Github repo to Dockerize Django + MySQL + Nginx + React js: [Ceci-Aguilera/django-react-nginx-mysql-docker](https://github.com/Ceci-Aguilera/django-react-nginx-mysql-docker)
-- Michael Herman article on testdriven.io: [dockerizing-django-with-postgres-gunicorn-and-nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
+
+- Michael Herman's article on testdriven.io: [dockerizing-django-with-postgres-gunicorn-and-nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
 ## To-Do
 
