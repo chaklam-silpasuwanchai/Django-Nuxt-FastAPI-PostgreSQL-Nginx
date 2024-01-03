@@ -6,7 +6,7 @@ import { faBolt, faHeart, faHouse} from "@fortawesome/free-solid-svg-icons";
 
 function SidebarComponent(props) {
   const heart = <FontAwesomeIcon icon={faHeart} color="#90EE90" />;
-  const bolt = <FontAwesomeIcon icon={faBolt} color="magenta" />;
+  const bolt  = <FontAwesomeIcon icon={faBolt} color="magenta" />;
   const house = <FontAwesomeIcon icon={faHouse} color="azure" />;
   const theme = "dark";
 
@@ -17,11 +17,9 @@ function SidebarComponent(props) {
           <Sidebar.Brand>
             <img
               src={RandomImage}
-              style={{ marginRight: "10px" }}
               alt=""
-              width="30"
               height="24"
-              className="d-inline-block align-text-top"
+              className="d-inline-block align-text-top icon-next-to-word"
             ></img>
             ESG Reporting
           </Sidebar.Brand>

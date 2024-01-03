@@ -41,10 +41,12 @@ function NavbarComponent(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-              <LinkContainer to="/">
-                <Nav.Link eventKey={1}>{house}</Nav.Link>
-              </LinkContainer>
-            <Nav.Link href="#link">{bolt}</Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link eventKey={1}>{house}</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/somepage">
+              <Nav.Link eventKey={2}>{bolt}</Nav.Link>
+            </LinkContainer>
             <NavDropdown title={heart} id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -66,7 +68,7 @@ function NavbarComponent(props) {
             </NavDropdown>
             <Nav.Link href="#link">
               {bell}
-              <Badge style={{ marginLeft: "5px" }} bg="primary">
+              <Badge style={{ marginLeft: "5px" }} className="badge-purple">
                 9
               </Badge>
             </Nav.Link>
@@ -79,14 +81,12 @@ function NavbarComponent(props) {
                   <img
                     src={ChakyImage} // Replace 'ChakyImage' with your image variable or path
                     alt="Chaky"
-                    style={{ width: "18px", marginRight: "10px" }} // Adjust the width and margin as needed
-                    className="rounded"
+                    className="rounded profile-image"
                   />
                   Chaky
                 </span>
               }
               id="basic-nav-dropdown"
-              className="profile"
               drop="lg-start"
             >
               <NavDropdown.Item href="#action/3.1">

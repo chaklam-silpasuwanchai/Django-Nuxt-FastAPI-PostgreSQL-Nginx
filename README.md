@@ -18,6 +18,8 @@
 
 - __PostgreSQL:__ This is the default configured database for this repository.
 
+- __React-Bootstrap:__ Everything is styled with react-bootstrap.  Please only use the styles given by https://react-bootstrap.github.io.  For custom css, put them in __index.scss__.  But try to minimize custom css as much as possible.
+
 ## Architecture
 
 ![Architecture Image](./.readme_assets/Arch.png)
