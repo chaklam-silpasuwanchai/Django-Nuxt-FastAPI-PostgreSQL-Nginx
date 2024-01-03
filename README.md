@@ -38,9 +38,9 @@
     docker-compose up -d --build
     ```
 
-    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api).  For production, turn off the API.
+    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api).
 
-1. To create a super user:
+2. To create a super user:
 
     ```bash
     docker exec -it [container id of the django] python manage.py createsuperuser
