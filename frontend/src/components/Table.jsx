@@ -40,7 +40,7 @@ function TableComponent() {
   useEffect(() => {
     const fetchData = async() => {
       try {
-        const response = await fetch("http://localhost:8080/api/report/");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}report/`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
