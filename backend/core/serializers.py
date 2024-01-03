@@ -5,3 +5,5 @@ class ReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = Report
         fields = ('id', 'name', 'version', 'last_updated')
+        
+#step 1.1 create serializers

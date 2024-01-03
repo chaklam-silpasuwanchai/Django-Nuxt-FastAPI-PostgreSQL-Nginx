@@ -19,3 +19,5 @@ class Report(models.Model):
     
     def __str__(self):
         return f"{self.name} - Version {self.version}"
+    
+#step 1: create models

@@ -9,5 +9,5 @@ from .models import Author
 class UserAdmin(DefaultUserAdmin):
     pass
 
-admin.site.register(Author)
+admin.site.register(Author)  #so that you guys can manipulate in localhost:8080/admin
 admin.site.register(Report)

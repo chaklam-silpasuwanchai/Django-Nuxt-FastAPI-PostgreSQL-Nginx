@@ -39,7 +39,7 @@
 1. To create a super user:
 
     ```bash
-    docker exec -it [container id of the postgresql] python manage.py createsuperuser
+    docker exec -it [container id of the django] python manage.py createsuperuser
     ```
 
     You can get the container ID from `docker container list`
