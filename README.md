@@ -89,6 +89,14 @@ There is nothing original here; I simply collect the best practices from the bes
 
 - Coby's GitHub - [https://github.com/cglusky/docker-django-react](https://github.com/cglusky/docker-django-react)
 
+## Must Watch
+
+For beginners, I recommend you watch these videos.  It will make sure you apply the best industry practices.
+
+- [All 12 useState & useEffect Mistakes Junior React Developers Still Make in 2023](https://www.youtube.com/watch?v=-yIsQPp31L0&t=1176s)
+
+- [All useEffect Mistakes Every Junior React Developer Makes](https://www.youtube.com/watch?v=QQYeipc_cik)
+
 ## To-Do
 
 - Deployment to Cloud
