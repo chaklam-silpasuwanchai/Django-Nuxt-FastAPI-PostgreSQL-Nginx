@@ -38,7 +38,7 @@ function TableComponent() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async() => {
       try {
         const response = await fetch("http://localhost:8080/api/report/");
 
