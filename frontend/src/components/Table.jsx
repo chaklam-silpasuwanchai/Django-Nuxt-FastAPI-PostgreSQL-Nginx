@@ -6,6 +6,8 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faTableList } from "@fortawesome/free-solid-svg-icons";
 
+import axios from 'axios';
+
 import React, { useEffect, useState } from "react";
 
 function TableComponent() {
@@ -38,20 +40,17 @@ function TableComponent() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}report/`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}report/`);
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
+        // Axios automatically throws an error for non-2xx responses
+        const result = response.data;
         setData(result);
       } catch (error) {
         console.error("Error:", error.message);
       }
-    }
+    };
 
     fetchData();
   }, []);
