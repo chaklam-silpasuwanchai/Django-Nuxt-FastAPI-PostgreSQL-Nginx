@@ -2,6 +2,9 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
+//i just generalize this for get; 
+//for update/create/delete, you may want to see how to further generalize this service
+
 const useApiService = (url, method = "get", dependencies = []) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
