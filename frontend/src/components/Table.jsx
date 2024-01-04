@@ -5,6 +5,7 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faTableList } from "@fortawesome/free-solid-svg-icons";
+import Spinner from 'react-bootstrap/Spinner';
 
 import axios from 'axios';
 
@@ -38,15 +39,18 @@ function TableComponent() {
   );
 
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);  //for good user experience; it's optional
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}report/`);
 
         // Axios automatically throws an error for non-2xx responses
         const result = response.data;
         setData(result);
+        setIsLoading(false);  //try to set this as true to see the effect of loading
       } catch (error) {
         console.error("Error:", error.message);
       }
@@ -54,6 +58,14 @@ function TableComponent() {
 
     fetchData();
   }, []);
+
+  if (isLoading){
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
 
   const formatLastUpdated = (lastUpdated) => {
     const options = {
