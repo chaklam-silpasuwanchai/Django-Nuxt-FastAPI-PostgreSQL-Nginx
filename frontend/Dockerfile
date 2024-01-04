@@ -11,6 +11,7 @@ ENV PATH /src/app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
+RUN npm install axios
 
 # add app
 COPY . ./

@@ -28,5 +28,7 @@ COPY ./entrypoint.sh .
 # copy project
 COPY . .
 
-# run entrypoint.sh
+# CMD tail -f /dev/null
+
+# # run entrypoint.sh
 ENTRYPOINT ["/src/app/entrypoint.sh"]

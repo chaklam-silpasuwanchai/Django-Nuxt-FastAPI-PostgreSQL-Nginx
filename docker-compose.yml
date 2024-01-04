@@ -15,6 +15,7 @@ services:
       - media:/src/app/media
     depends_on:
       - db
+
   react:
     build: ./frontend
     container_name: dev-react
@@ -31,6 +32,7 @@ services:
       - node_modules:/src/app/node_modules
     depends_on:
       - django
+
   db:
     image: postgres:16.1-alpine
     container_name: dev-db
@@ -39,6 +41,19 @@ services:
     env_file: ./.env.dev
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: dev-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - "5050:5050"
+    depends_on:
+      - db
+
   nginx:
     build: ./nginx
     container_name: dev-nginx
