@@ -39,7 +39,7 @@ function TableComponent() {
 
   const { data, isLoading } = useApiService(`${process.env.REACT_APP_API_URL}report/`, 'get', []);
 
-  if (isLoading){
+  if (isLoading) {
     return (
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
