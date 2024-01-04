@@ -7,9 +7,8 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faTableList } from "@fortawesome/free-solid-svg-icons";
 import Spinner from 'react-bootstrap/Spinner';
 
-import axios from 'axios';
-
-import React, { useEffect, useState } from "react";
+import useApiService from '../services/apiService'
+import React from "react";
 
 function TableComponent() {
   const eye = (
@@ -38,26 +37,7 @@ function TableComponent() {
     </span>
   );
 
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);  //for good user experience; it's optional
-      try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}report/`);
-
-        // Axios automatically throws an error for non-2xx responses
-        const result = response.data;
-        setData(result);
-        setIsLoading(false);  //try to set this as true to see the effect of loading
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data, isLoading } = useApiService(`${process.env.REACT_APP_API_URL}report/`, 'get', []);
 
   if (isLoading){
     return (
@@ -65,6 +45,10 @@ function TableComponent() {
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
+  }
+
+  if (!data) {
+    return <p>No data available.</p>;
   }
 
   const formatLastUpdated = (lastUpdated) => {
