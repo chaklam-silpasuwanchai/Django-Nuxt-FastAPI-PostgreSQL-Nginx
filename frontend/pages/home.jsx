@@ -25,7 +25,7 @@ export default function HomePage() {
         </div> */}
 
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
+          Lorems ipsum dolor sit amet consectetur, adipisicing elit. Sed
           eligendi, ad rerum unde corporis exercitationem aut, ipsam et
           doloremque consectetur similique magni odio fugiat totam provident,
           sit sunt omnis dicta. Lorem ipsum dolor sit amet consectetur

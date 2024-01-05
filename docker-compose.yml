@@ -19,7 +19,7 @@ services:
   react:
     build: ./frontend
     container_name: dev-react
-    command: npm run production
+    command: npm run dev
     ports:
       - 3001:3000
     env_file:
