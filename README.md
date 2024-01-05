@@ -56,7 +56,7 @@
 
 ## Docker-Compose
 
-This repository is divided into 3 main folders. These folders are:
+This repository is divided into 4 main folders. These folders are:
 
 - __backend:__ Has the Django project created with ``django-admin startproject``.
 
