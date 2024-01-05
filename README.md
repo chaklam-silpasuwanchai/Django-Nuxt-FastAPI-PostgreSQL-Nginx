@@ -20,8 +20,6 @@ A stack for quickly making web app for AI related applications.
 
 - __PostgreSQL:__ This is the default configured database for this repository.  Pgadmin is pre-installed in the __docker-compose.yml__
 
-- __React-Bootstrap:__ Everything is styled with react-bootstrap.  Please only use the styles given by https://react-bootstrap.github.io.  For custom css, put them in __index.scss__.  But try to minimize custom css as much as possible.
-
 - __Fastapi:__  Refers to the __model__ folder for handling API access to deep learning models or large language models.
 
 ## Screenshot
@@ -30,7 +28,7 @@ A stack for quickly making web app for AI related applications.
 
 ## Architecture
 
-![Architecture Image](./.readme_assets/Arch.png)
+![Architecture Image](./.readme_assets/Arch.jpg)
 
 ## Install (Run) with Docker
 
@@ -42,7 +40,7 @@ A stack for quickly making web app for AI related applications.
     docker-compose up -d --build
     ```
 
-    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api), and to access the __Fastapi__ go to [localhost:8080/fastapi/docs](http://localhost:8080/fastapi/docs/)
+    Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api), and to access the __Fastapi__ go to [localhost:8080/fastapi/docs](http://localhost:8080/fastapi/docs/).   I have disabled all ports such as 3000, 8000, and 8001, so everything is managed by nginx.
 
 2. To create a super user:
 
@@ -62,9 +60,9 @@ This repository is divided into 4 main folders. These folders are:
 
 - __backend:__ Has the Django project created with ``django-admin startproject``.
 
-- __frontend:__ Has the React project been created with ``npx create-react-app``
+- __frontend:__ Has the React project been created with ``npx create-next-app``
 
-- __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the default config to run Django + React.
+- __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the  nginx config.
 
 - __model:__ Has the Dockerfile installing uvicorn and Fastapi.
 
