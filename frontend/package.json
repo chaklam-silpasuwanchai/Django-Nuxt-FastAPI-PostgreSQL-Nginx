@@ -3,7 +3,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "start": "next start"
+    "production": "next build && next start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
