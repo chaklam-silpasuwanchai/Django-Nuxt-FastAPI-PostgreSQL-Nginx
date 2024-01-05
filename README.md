@@ -1,6 +1,8 @@
 <div align="center">
 
-# React Django
+# Django-React-FastAPI-PostgreSQL-Nginx
+
+A stack for quickly making web app for AI related applications.
 
 ![Python version](https://img.shields.io/badge/Python-3.11.0-4c566a?logo=python&&longCache=true&logoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django version](https://img.shields.io/badge/Django-5.0.0-4c566a?logo=django&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django-RestFramework version](https://img.shields.io/badge/Django_Rest_Framework-3.14.0-red.svg?longCache=true&style=flat-square&logo=django&logoColor=white&colorA=4c566a&colorB=pink) ![Fastapi version](https://img.shields.io/badge/Fastapi-0.108.0-red.svg?longCache=true&style=flat-square&logo=fastapi&logoColor=white&colorA=4c566a&colorB=pink) ![PostgreSQL version](https://img.shields.io/badge/PostgreSQL-12.8-red.svg?longCache=true&style=flat-square&logo=postgresql&logoColor=white&colorA=4c566a&colorB=pink) ![React version](https://img.shields.io/badge/React-18.2.0-red.svg?longCache=true&style=flat-square&logo=react&logoColor=white&colorA=4c566a&colorB=pink) ![Next version](https://img.shields.io/badge/Next-14.0.4-red.svg?longCache=true&style=flat-square&logo=next.js&logoColor=white&colorA=4c566a&colorB=pink) ![Bootstrap version](https://img.shields.io/badge/Bootstrap-5.3.2-red.svg?longCache=true&style=flat-square&logo=bootstrap&logoColor=white&colorA=4c566a&colorB=pink)
 
