@@ -1,3 +1,5 @@
+import React from "react";
+
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -5,12 +7,20 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faTableList } from "@fortawesome/free-solid-svg-icons";
-import Spinner from 'react-bootstrap/Spinner';
 
-import useApiService from '../services/apiService'
-import React from "react";
+import Spinner from 'react-bootstrap/Spinner';
+import useSWR from 'swr';
 
 function TableComponent() {
+
+  const fetcher = async (url) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    return response.json();
+  };
+
   const eye = (
     <span className="crud-icon">
       <FontAwesomeIcon icon={faEye} size="xs" />
@@ -37,18 +47,18 @@ function TableComponent() {
     </span>
   );
 
-  const { data, isLoading } = useApiService(`${process.env.REACT_APP_API_URL}report/`, 'get', []);
+  const { data, error } = useSWR(`http://localhost:8080/api/report/`, fetcher);
 
-  if (isLoading) {
+  if (error) {
+    return <div>Error fetching data</div>;
+  }
+
+  if (!data) {    
     return (
       <Spinner animation="border" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
-  }
-
-  if (!data) {
-    return <p>No data available.</p>;
   }
 
   const formatLastUpdated = (lastUpdated) => {
