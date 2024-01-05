@@ -28,11 +28,8 @@ COPY ./entrypoint.sh .
 # copy project
 COPY . .
 
-RUN python manage.py makemigrations core
-RUN python manage.py migrate
-RUN python manage.py collectstatic --noinput
+# # run entrypoint.sh
+ENTRYPOINT ["/src/app/entrypoint.sh"]
 
 CMD tail -f /dev/null
 
-# # run entrypoint.sh
-# ENTRYPOINT ["/src/app/entrypoint.sh"]

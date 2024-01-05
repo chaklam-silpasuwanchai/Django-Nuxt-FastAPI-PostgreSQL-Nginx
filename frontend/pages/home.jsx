@@ -5,7 +5,7 @@ import SidebarComponent from "./components/Sidebar";
 import FooterComponent from "./components/Footer";
 import BreadcrumbComponent from "./components/Breadcrumb";
 import DashcardComponent from "./components/Dashcard";
-// import TableComponent from "./components/Table";
+import TableComponent from "./components/Table";
 
 export default function HomePage() {
   // const theme = {bg: "light" , color: "#222"};  later on for dark mode and light mode
@@ -20,9 +20,9 @@ export default function HomePage() {
         <div className="section dashboard">
           <DashcardComponent />
         </div>
-        {/* <div className="section table">
+        <div className="section table">
           <TableComponent />
-        </div> */}
+        </div>
 
         <p>
           Lorems ipsum dolor sit amet consectetur, adipisicing elit. Sed
