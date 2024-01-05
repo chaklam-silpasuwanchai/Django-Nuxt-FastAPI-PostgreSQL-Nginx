@@ -1,8 +1,8 @@
 # BUILD
 FROM node:lts-slim as build
-ENV PATH /srv/app/node_modules/.bin:$PATH
+ENV PATH /src/app/node_modules/.bin:$PATH
 
-WORKDIR /srv/app
+WORKDIR /src/app
 
 COPY ./frontend/package.json ./
 COPY ./frontend/package-lock.json ./
@@ -16,10 +16,10 @@ RUN npm run build
 
 # FINAL
 FROM nginx:stable-alpine
-RUN mkdir /srv/http
+RUN mkdir /src/http
 ## add permissions 
-RUN chown -R nginx:nginx /srv/http && chmod -R 754 /srv/http 
-COPY --from=build /srv/app/build /srv/http
+RUN chown -R nginx:nginx /src/http && chmod -R 754 /src/http 
+COPY --from=build /src/app/build /src/http
 # Allow custom nginx config for React Router etc
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80

@@ -3,7 +3,7 @@
 FROM python:3.8.3-alpine as build
 
 # set work directory
-WORKDIR /srv/app
+WORKDIR /src/app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -25,7 +25,7 @@ COPY . .
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps \
-  --wheel-dir /srv/app/wheels -r requirements.txt
+  --wheel-dir /src/app/wheels -r requirements.txt
 
 
 # FINAL
@@ -36,8 +36,8 @@ FROM python:3.8.3-alpine
 RUN addgroup -S app && adduser -S app -G app
 
 # create the appropriate directories
-# ENV HOME=/srv
-ENV APP_HOME=/srv/app
+# ENV HOME=/src
+ENV APP_HOME=/src/app
 RUN mkdir $APP_HOME
 RUN mkdir $APP_HOME/static
 RUN mkdir $APP_HOME/media
@@ -45,8 +45,8 @@ WORKDIR $APP_HOME
 
 # install dependencies
 RUN apk add --update --no-cache libpq postgresql-client
-COPY --from=build /srv/app/wheels /wheels
-COPY --from=build /srv/app/requirements.txt .
+COPY --from=build /src/app/wheels /wheels
+COPY --from=build /src/app/requirements.txt .
 RUN pip install --no-cache /wheels/*
 
 # copy entrypoint-prod.sh
@@ -62,4 +62,4 @@ RUN chown -R app:app $APP_HOME
 USER app
 
 # run entrypoint.prod.sh
-ENTRYPOINT ["/srv/app/entrypoint.prod.sh"]
+ENTRYPOINT ["/src/app/entrypoint.prod.sh"]

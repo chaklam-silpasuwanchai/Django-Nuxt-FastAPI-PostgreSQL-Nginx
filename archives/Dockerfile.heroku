@@ -2,7 +2,7 @@ ARG VERSION=lts-slim
 
 FROM node:${VERSION} as builder
 
-ARG REACT_APP_API_URL
+ARG NEXT_PUBLIC_API_URL
 
 WORKDIR /code
 
