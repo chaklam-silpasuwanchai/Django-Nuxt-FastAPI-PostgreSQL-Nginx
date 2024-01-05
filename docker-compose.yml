@@ -5,8 +5,6 @@ services:
     build: ./backend
     container_name: dev-django
     command: gunicorn -b 0.0.0.0:8000 api.wsgi:application
-    ports:
-      - 8001:8000
     env_file:
       - ./.env.dev
     volumes:
@@ -20,8 +18,6 @@ services:
     build: ./frontend
     container_name: dev-react
     command: npm run dev
-    ports:
-      - 3001:3000
     env_file:
       - ./.env.dev
     tty: true
