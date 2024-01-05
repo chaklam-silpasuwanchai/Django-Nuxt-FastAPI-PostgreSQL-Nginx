@@ -79,7 +79,8 @@ Containers, Services and Ports
 | dev-django | django  | 8000      | 8000        |
 | dev-react  | react   | 3000      | 3000        |
 | dev-db     | db      | 5432      | 5432        |
-| dev-fastapi| fastapi | 8001      | 8001
+| dev-fastapi| fastapi | 8001      | 8001        |
+| dev-pgadmin| pgadmin | 5050      | 5050        |
 | dev-nginx  | nginx   | 8080      | 80          |
 
 ## Useful Links
