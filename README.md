@@ -105,5 +105,6 @@ For beginners, I recommend you watch these videos.  It will make sure you apply 
 
 ## To-Do
 
+- SSL Certificate with CerBot
 - Deployment to Cloud
 - Setup CI/CD using GitHub Actions
