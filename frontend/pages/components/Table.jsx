@@ -47,7 +47,7 @@ function TableComponent() {
     </span>
   );
 
-  const { data, error } = useSWR(`http://localhost:8080/api/report/`, fetcher);
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_URL}report/`, fetcher);
 
   if (error) {
     return <div>Error fetching data</div>;
