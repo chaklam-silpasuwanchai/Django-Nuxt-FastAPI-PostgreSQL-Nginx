@@ -28,6 +28,7 @@ services:
       - node_modules:/src/app/node_modules
     depends_on:
       - django
+      - fastapi
 
   fastapi:
     build: ./model
