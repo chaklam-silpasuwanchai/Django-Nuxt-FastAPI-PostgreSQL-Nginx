@@ -4,7 +4,7 @@ services:
   django:
     build: ./backend
     container_name: dev-django
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn -b 0.0.0.0:8000 api.wsgi:application
     ports:
       - 8001:8000
     env_file:
