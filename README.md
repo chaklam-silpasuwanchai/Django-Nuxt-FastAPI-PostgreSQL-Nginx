@@ -10,13 +10,13 @@
 
 - __Django:__ This is the backbone of the backend API, and the packages installed are specified in the _requirements.txt_ file inside the __backend__ folder.
 
-- __React:__ The __frontend__ library in use. This was created via ``npx create-react-app``. The things pre-installed can be found in __package.json__.
+- __React:__ The __frontend__ library in use using __Next.js__ framework.  __Next.js__ is more robust and recommended over the classic React. This was created via ``npx create-next-app``. The things pre-installed can be found in __package.json__.
 
   If you want to install more packages, simply `npm install [pkg]` locally at the `frontend` directory.  Then observe that `package.json` got changed.  Docker will pick it up and install it on the container once you `docker-compose build` again.  If things do not install, simply delete all the associated volumes and images, delete the __node_modules__ folders, and `docker-compose build` from scratch.  It works well for me.
 
 - __Nginx:__ This is the server for the Docker-Compose testing build. The default configuration in use can be found at the __nginx/nginx.conf__ file.  Serves Django's static and media files as well.  In the __Nginx__, I have set such that Django can be accessed via `api`, `admin`, and `ws`(websocket).  See conf for details.
 
-- __PostgreSQL:__ This is the default configured database for this repository.
+- __PostgreSQL:__ This is the default configured database for this repository.  Pgadmin is pre-installed in the __docker-compose.yml__
 
 - __React-Bootstrap:__ Everything is styled with react-bootstrap.  Please only use the styles given by https://react-bootstrap.github.io.  For custom css, put them in __index.scss__.  But try to minimize custom css as much as possible.
 
