@@ -1,5 +1,5 @@
-import Layout from "@/components/Layout";
-import Main from "@/components/Main";
+import Layout from "@/components/layouts/Layout";
+import Main from "@/components/layouts/Main";
 import NavbarComponent from "@/components/Navbar";
 import SidebarComponent from "@/components/Sidebar";
 import FooterComponent from "@/components/Footer";
