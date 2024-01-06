@@ -313,14 +313,20 @@ $sidebar-menu-dark-brand-hover-color: $navbar-dark-brand-hover-color !default;
         color: $sidebar-menu-dark-hover-color;
       }
 
-      &.disabled {
-        color: $sidebar-menu-dark-disabled-color;
+      // &.disabled {
+      //   color: inherit; //$sidebar-menu-dark-disabled-color;
+      // }
+
+      &.disabled:hover  {
+        color: red; //$sidebar-menu-dark-disabled-color;
       }
+
     }
 
     .sidebar-menu-nav-link.active {
       color: $sidebar-menu-dark-active-color;
     }
+
   }
 
   .sidebar-menu-sub-toggle {

@@ -43,7 +43,7 @@ function TableComponent() {
   );
   const table = (
     <span className="icon-next-to-word">
-      <FontAwesomeIcon icon={faTableList} size="lg" color="green" />
+      <FontAwesomeIcon icon={faTableList} size="lg" />
     </span>
   );
 
@@ -75,7 +75,7 @@ function TableComponent() {
 
   return (
     <div>
-      <div className="table-title mb-1 shadow-sm rounded">
+      <div className="table-title">
         {table} List of Reports
       </div>
       <Table striped hover className="shadow-sm my-table">

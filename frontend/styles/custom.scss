@@ -96,7 +96,9 @@ html, body, #root {
 .section{
   margin-top: 10px;
   padding: 30px;
-  background-color: #eee;
+  background-color: ghostwhite;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 // .dashboard{
@@ -112,6 +114,7 @@ html, body, #root {
 
 .icon-next-to-word{
   margin-right: 5px;
+  background-color: inherit !important;
 }
 
 table td{
@@ -125,10 +128,9 @@ table th{
 
 .table-title{
   font-size: $standard-font-size;
-  color: #666;
-  border: 0.5px solid $website-light-gray;
-  padding: 10px;
-  background-color: #f5f5ff;
+  color: #222;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
@@ -188,14 +190,16 @@ span.badge-purple {
 } 
 
 .my-form form{
+  margin-top: 10px;
   padding: 30px;
-  background-color: #f5f5ff;
+  background-color: white;
   border-radius: 8px;
-  border: 0.5px solid $website-light-gray;
+  border: 1px solid #ddd;
 }
 
 .my-form form label{
   font-size: 14px;
+  font-weight: bold;
 }
 
 .my-form form input{

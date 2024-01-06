@@ -17,6 +17,7 @@ export default function Menu3() {
           <Sidebar.Nav.Link
             eventKey='fastapi'
             as="span"
+            className="disabled"
           >
             <Sidebar.Nav.Icon>{link}</Sidebar.Nav.Icon>
             <Sidebar.Nav.Title>FastAPI</Sidebar.Nav.Title>
@@ -28,6 +29,7 @@ export default function Menu3() {
           <Sidebar.Nav.Link
             eventKey='djangoapi'
             as="span"
+            className="disabled"
           >
             <Sidebar.Nav.Icon>{link}</Sidebar.Nav.Icon>
             <Sidebar.Nav.Title>Django API</Sidebar.Nav.Title>
@@ -39,6 +41,7 @@ export default function Menu3() {
           <Sidebar.Nav.Link
             eventKey='djangoadmin'
             as="span"
+            className="disabled"
           >
             <Sidebar.Nav.Icon>{link}</Sidebar.Nav.Icon>
             <Sidebar.Nav.Title>Django Admin</Sidebar.Nav.Title>

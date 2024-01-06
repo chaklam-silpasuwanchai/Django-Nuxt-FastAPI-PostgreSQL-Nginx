@@ -20,7 +20,7 @@ export default function DashcardComponent() {
   );
   const board = (
     <span className="icon-next-to-word">
-      <FontAwesomeIcon icon={faDashboard} color="#dc3545" size="lg" />
+      <FontAwesomeIcon icon={faDashboard} size="lg" />
     </span>
   );
 
@@ -29,7 +29,7 @@ export default function DashcardComponent() {
   const now3 = 11;
   return (
     <div>
-      <div className="table-title mb-1 shadow-sm rounded">{board} Stats</div>
+      <div className="table-title">{board} Stats</div>
       <Row>
         <Col md={4}>
           <Card className="shadow p-3">

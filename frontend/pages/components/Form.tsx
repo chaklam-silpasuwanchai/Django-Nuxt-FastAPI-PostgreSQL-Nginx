@@ -7,12 +7,12 @@ import { faFileInvoice } from "@fortawesome/free-solid-svg-icons";
 export default function FormComponent() {
   const file = (
     <span className="icon-next-to-word">
-      <FontAwesomeIcon icon={faFileInvoice} color="#800080" size="lg" />
+      <FontAwesomeIcon icon={faFileInvoice} size="lg" />
     </span>
   );
   return (
     <div>
-      <div className="table-title mb-1 shadow-sm rounded">{file} Form title</div>
+      <div className="table-title">{file} Form title</div>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
