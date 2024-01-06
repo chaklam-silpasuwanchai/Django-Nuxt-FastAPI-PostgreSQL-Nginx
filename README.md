@@ -99,9 +99,7 @@ There is nothing original here; I simply collect the best practices from the bes
 
 For beginners, I recommend you watch these videos.  It will make sure you apply the best industry practices.
 
-- [All 12 useState & useEffect Mistakes Junior React Developers Still Make in 2023](https://www.youtube.com/watch?v=-yIsQPp31L0&t=1176s)
-
-- [All useEffect Mistakes Every Junior React Developer Makes](https://www.youtube.com/watch?v=QQYeipc_cik)
+- [NextJS Tutorial - All 12 Concepts You Need to Know](https://www.youtube.com/watch?v=vwSlYG7hFk0)
 
 ## To-Do
 
