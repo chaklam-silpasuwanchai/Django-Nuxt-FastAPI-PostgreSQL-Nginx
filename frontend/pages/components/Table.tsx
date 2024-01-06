@@ -43,7 +43,7 @@ function TableComponent() {
   );
   const table = (
     <span className="icon-next-to-word">
-      <FontAwesomeIcon icon={faTableList} size="lg" />
+      <FontAwesomeIcon icon={faTableList} size="lg"/>
     </span>
   );
 

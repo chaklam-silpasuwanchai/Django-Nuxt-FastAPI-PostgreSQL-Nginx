@@ -7,7 +7,7 @@ export default function AnotherPage() {
   return (
     <Layout>
       <Main>
-        <div className="section my-form">
+        <div className="my-form">
           <FormComponent />
         </div>
       </Main>

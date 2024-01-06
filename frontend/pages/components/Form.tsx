@@ -12,8 +12,8 @@ export default function FormComponent() {
   );
   return (
     <div>
-      <div className="table-title">{file} Form title</div>
       <Form>
+      <div className="form-title">{file} Form title</div>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control placeholder="Enter report name" />
@@ -25,9 +25,6 @@ export default function FormComponent() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Version</Form.Label>
           <Form.Control placeholder="Enter report version" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Published?" />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
