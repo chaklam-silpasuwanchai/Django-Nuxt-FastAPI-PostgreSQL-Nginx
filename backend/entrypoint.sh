@@ -19,5 +19,6 @@ fi
 python manage.py makemigrations core
 python manage.py migrate
 python manage.py collectstatic --noinput
+python manage.py createsuperuser --noinput #automatically read ENV file for DJANGO_SUPERUSER_USERNAME, etc.
 
 exec "$@"
