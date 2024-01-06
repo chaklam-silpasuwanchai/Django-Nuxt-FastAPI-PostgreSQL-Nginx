@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt, faHeart, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export default function OverviewMenu() {
+export default function Menu2() {
   const router = useRouter();
   const currentRoute = router.pathname;
 
@@ -18,7 +18,7 @@ export default function OverviewMenu() {
         <Link href="/another">
           <Sidebar.Nav.Link
             className={currentRoute === "/another" ? "active" : ""}
-            eventKey={4}
+            eventKey='gotoanother'
             as="span"
           >
             <Sidebar.Nav.Icon>{heart}</Sidebar.Nav.Icon>

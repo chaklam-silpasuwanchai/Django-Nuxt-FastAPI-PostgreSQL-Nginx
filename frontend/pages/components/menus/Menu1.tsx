@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt, faHouse } from "@fortawesome/free-solid-svg-icons";
 
-export default function OverviewMenu() {
+export default function Menu1() {
   const router = useRouter();
   const currentRoute = router.pathname;
 
@@ -19,7 +19,7 @@ export default function OverviewMenu() {
         <Link href={"/home"}>
           <Sidebar.Nav.Link
             className={currentRoute === "/home" ? "active" : ""}
-            eventKey={2}
+            eventKey='gotohouse'
             as="span"
           >
             <Sidebar.Nav.Icon>{house}</Sidebar.Nav.Icon>
@@ -31,7 +31,7 @@ export default function OverviewMenu() {
         <Link href={"/some"}>
           <Sidebar.Nav.Link
             className={currentRoute === "/some" ? "active" : ""}
-            eventKey={3}
+            eventKey='gotosome'
             as="span"
           >
             <Sidebar.Nav.Icon>{bolt}</Sidebar.Nav.Icon>

@@ -2,6 +2,7 @@ import Sidebar from "react-bootstrap-sidebar-menu";
 
 import Menu1 from "@/components/menus/Menu1";
 import Menu2 from "@/components/menus/Menu2";
+import Menu3 from "@/components/menus/Menu3";
 
 export default function SidebarComponent() {
 
@@ -25,6 +26,7 @@ export default function SidebarComponent() {
         <Sidebar.Body>
           <Menu1 />
           <Menu2 />
+          <Menu3 />
         </Sidebar.Body>
       </Sidebar.Collapse>
     </Sidebar>
