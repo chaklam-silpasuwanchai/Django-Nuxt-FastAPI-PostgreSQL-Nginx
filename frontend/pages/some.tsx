@@ -1,9 +1,9 @@
-import Layout from "./components/Layout";
-import Main from "./components/Main";
-import NavbarComponent from "./components/Navbar";
-import SidebarComponent from "./components/Sidebar";
-import FooterComponent from "./components/Footer";
-import BreadcrumbComponent from "./components/Breadcrumb";
+import Layout from "@/components/Layout";
+import Main from "@/components/Main";
+import NavbarComponent from "@/components/Navbar";
+import SidebarComponent from "@/components/Sidebar";
+import FooterComponent from "@/components/Footer";
+import BreadcrumbComponent from "@/components/Breadcrumb";
 
 export default function SomePage() {
   // const theme = {bg: "light" , color: "#222"};  later on for dark mode and light mode

@@ -61,8 +61,8 @@ function TableComponent() {
     );
   }
 
-  const formatLastUpdated = (lastUpdated) => {
-    const options = {
+  const formatLastUpdated = (lastUpdated: string): string => {
+    const options: Intl.DateTimeFormatOptions = {
       month: "long",
       day: "numeric",
       year: "numeric",
