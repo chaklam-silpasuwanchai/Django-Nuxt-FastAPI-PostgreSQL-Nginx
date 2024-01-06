@@ -1,20 +1,11 @@
 import Layout from "@/components/layouts/Layout";
 import Main from "@/components/layouts/Main";
-import NavbarComponent from "@/components/Navbar";
-import SidebarComponent from "@/components/Sidebar";
-import FooterComponent from "@/components/Footer";
-import BreadcrumbComponent from "@/components/Breadcrumb";
 
 export default function SomePage() {
   // const theme = {bg: "light" , color: "#222"};  later on for dark mode and light mode
   return (
     <Layout>
-      <NavbarComponent />
-      <SidebarComponent />
       <Main>
-        <div className="breadcrumb">
-          <BreadcrumbComponent />
-        </div>
         <div className="section lot-of-text">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
           eligendi, ad rerum unde corporis exercitationem aut, ipsam et
@@ -25,7 +16,6 @@ export default function SomePage() {
           optio eligendi dignissimos quas sed voluptate?
         </div>
       </Main>
-      <FooterComponent />
     </Layout>
   );
 }
