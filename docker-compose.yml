@@ -3,6 +3,8 @@ version: "3.8"
 services:
   django:
     build: ./backend
+    platform: linux/amd64
+    image: chaklams072/django
     container_name: dev-django
     command: gunicorn -b 0.0.0.0:8000 api.wsgi:application
     env_file:
@@ -11,11 +13,14 @@ services:
       - ./backend/:/src/app
       - static:/src/app/static
       - media:/src/app/media
+      - vscode-django:/root/.vscode-server
     depends_on:
       - db
 
   react:
     build: ./frontend
+    platform: linux/amd64
+    image: chaklams072/react
     container_name: dev-react
     command: npm run dev
     env_file:
@@ -26,18 +31,22 @@ services:
     volumes:
       - ./frontend/:/src/app
       - node_modules:/src/app/node_modules
+      - vscode-react:/root/.vscode-server
     depends_on:
       - django
       - fastapi
 
   fastapi:
     build: ./model
+    platform: linux/amd64
+    image: chaklams072/fastapi
     container_name: dev-fastapi
     command: uvicorn main:app --host 0.0.0.0 --port 8001 --root-path /fastapi
     env_file:
       - ./.env.dev
     volumes:
       - ./model/:/src/app
+      - vscode-fastapi:/root/.vscode-server
 
   db:
     image: postgres:16.1-alpine
@@ -59,6 +68,8 @@ services:
 
   nginx:
     build: ./nginx
+    platform: linux/amd64
+    image: chaklams072/nginx
     container_name: dev-nginx
     ports:
       - 8080:80
@@ -77,3 +88,6 @@ volumes:
   postgres_data:
   media:
   static:
+  vscode-django:
+  vscode-react:
+  vscode-fastapi:
