@@ -100,27 +100,16 @@ body,
   background-color: ghostwhite;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background: #c9d6ff; /* fallback for old browsers */
+  background: #d3cce3; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #e2e2e2,
-    #c9d6ff
+    #e9e4f0,
+    #d3cce3
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #e2e2e2,
-    #c9d6ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: #ece9e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to left,
-    #ffffff,
-    #ece9e6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to left,
-    #ffffff,
-    #ece9e6
+    #e9e4f0,
+    #d3cce3
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -235,6 +224,7 @@ span.badge-purple {
 .my-form .form-title {
   padding-bottom: 20px;
   color: white;
+  text-transform: uppercase;
 }
 
 .my-form form label {
@@ -243,21 +233,38 @@ span.badge-purple {
   color: white;
 }
 
-.my-form form input {
+.my-form .input-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.my-form form input[type="text"] {
   font-size: 14px;
   padding: 10px;
-  background-color: rgba(255,255,255,0.3);  
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
   border: none;
   border-radius: 10px;
-  width: 300px;
 }
 
 .my-form form input::placeholder {
-  color: rgba(255,255,255,1.0); 
+  color: rgba(255, 255, 255, 0.419);
+  margin: 30px;
+}
+
+.my-form .input-group-text {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  display: block;
 }
 
 .my-form form .btn[type="submit"] {
   border: none;
+  text-transform: uppercase;
+  margin: 15px 0px;
+  padding: 10px 20px;
+  background-color: rgb(128, 0, 128, 0.6) !important;
 }
 
 .my-form .form-text {
