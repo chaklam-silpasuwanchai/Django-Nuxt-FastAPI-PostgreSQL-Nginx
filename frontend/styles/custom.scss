@@ -267,17 +267,20 @@ span.badge-purple {
   background-color: rgb(128, 0, 128, 0.6) !important;
 }
 
+.my-form form .btn[type="submit"]:hover {
+  background-color: rgb(128, 0, 128, 0.3) !important;
+}
+
 .my-form .form-text {
   font-size: 11px;
   color: white;
 }
 
-.btn.btn-primary {
-  background-color: $website-purple !important;
-  border: 1px solid #f5f5ff;
-}
-
 a {
   color: inherit !important;
   text-decoration: none !important;
+}
+
+.btn:hover{
+  background-color: #eee;
 }

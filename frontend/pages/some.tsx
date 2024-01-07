@@ -6,15 +6,11 @@ export default function SomePage() {
   return (
     <Layout>
       <Main>
-        <div className="section lot-of-text">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
-          eligendi, ad rerum unde corporis exercitationem aut, ipsam et
-          doloremque consectetur similique magni odio fugiat totam provident,
-          sit sunt omnis dicta. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Neque quae delectus, cum provident laboriosam at.
-          Repudiandae esse veniam quam, reiciendis et facilis blanditiis ut
-          optio eligendi dignissimos quas sed voluptate?
-        </div>
+        <div className="section lot-of-text lead">
+          <h1 className="display-4 font-weight-normal">Punny headline</h1>
+          <p className="lead font-weight-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+          <a className="btn btn-outline-secondary" href="#">Coming soon</a>
+      </div>
       </Main>
     </Layout>
   );

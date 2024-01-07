@@ -18,7 +18,6 @@ export default function FormComponent() {
     <div>
       <Form>
         <div className="form-title">{file} Enter Report Description</div>
-
         <InputGroup>
           <InputGroup.Text id="basic-addon1">{file}</InputGroup.Text>
           <Form.Control
