@@ -2,7 +2,7 @@
 
 # Django-React-FastAPI-PostgreSQL-Nginx
 
-A stack for quickly making web app for AI related applications.
+A stack to quickly make web apps for AI-related applications.
 
 ![Python version](https://img.shields.io/badge/Python-3.11.0-4c566a?logo=python&&longCache=true&logoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django version](https://img.shields.io/badge/Django-5.0.0-4c566a?logo=django&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django-RestFramework version](https://img.shields.io/badge/Django_Rest_Framework-3.14.0-red.svg?longCache=true&style=flat-square&logo=django&logoColor=white&colorA=4c566a&colorB=pink) ![Fastapi version](https://img.shields.io/badge/Fastapi-0.108.0-red.svg?longCache=true&style=flat-square&logo=fastapi&logoColor=white&colorA=4c566a&colorB=pink) ![PostgreSQL version](https://img.shields.io/badge/PostgreSQL-12.8-red.svg?longCache=true&style=flat-square&logo=postgresql&logoColor=white&colorA=4c566a&colorB=pink) ![React version](https://img.shields.io/badge/React-18.2.0-red.svg?longCache=true&style=flat-square&logo=react&logoColor=white&colorA=4c566a&colorB=pink) ![Next version](https://img.shields.io/badge/Next-14.0.4-red.svg?longCache=true&style=flat-square&logo=next.js&logoColor=white&colorA=4c566a&colorB=pink) ![Bootstrap version](https://img.shields.io/badge/Bootstrap-5.3.2-red.svg?longCache=true&style=flat-square&logo=bootstrap&logoColor=white&colorA=4c566a&colorB=pink)
 
@@ -42,7 +42,7 @@ A stack for quickly making web app for AI related applications.
 
     Congratulations !!! The app should be up and running. To access the __React__ frontend go to [localhost:8080](http://localhost:8080), and to access the __Django__ backend go to [localhost:8080/api](http://localhost:8080/api), and to access the __Fastapi__ go to [localhost:8080/fastapi/docs](http://localhost:8080/fastapi/docs/).   I have disabled all ports such as 3000, 8000, and 8001, so everything is managed by nginx.
 
-2. To create a super user:
+1. To create a super user:
 
     ```bash
     docker exec -it [container id of the django] python manage.py createsuperuser
@@ -62,7 +62,7 @@ This repository is divided into 4 main folders. These folders are:
 
 - __frontend:__ Has the React project been created with ``npx create-next-app``
 
-- __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the  nginx config.
+- __nginx:__ Has the Dockerfile used in the __docker-compose.yml__ file and the nginx config.
 
 - __model:__ Has the Dockerfile installing uvicorn and Fastapi.
 
@@ -85,7 +85,7 @@ Containers, Services and Ports
 
 ## Deployment
 
-The idea is that to deploy to some server/cloud, we only build the images in local machines, and push these images to Dockerhub and any registry.  In the production machine (e.g., Azure), it should **only** have one __docker-compose.yml__ file along with a __.env[.dev|.prod]__ file.  **You do not clone the github repo in production machine**.     Every time we commit our GitHub, it executes __github actions__ that: 
+The idea is that to deploy to some server/cloud, we only build the images in local machines, and push these images to Dockerhub and any registry.  In the production machine (e.g., Azure), it should **only** have one __docker-compose.yml__ file along with a __.env[.dev|.prod]__ file.  **You do not clone the GitHub repo in the production machine**.     Every time we commit our GitHub, it executes __github actions__ that:
 
 1. pull the latest git repo,
 2. call `docker-compose build`,
@@ -94,7 +94,7 @@ The idea is that to deploy to some server/cloud, we only build the images in loc
 
 For sample __docker-compose.yml__ I used in the Azure VM, see the __archives__ folder.  Note that I removed all `.build` and `volumes` since both of them are not required in production.
 
-For sample github actions, see this repository workflow yml file.
+For sample GitHub actions, see this repository workflow YML file.
 
 ## Useful Links
 
