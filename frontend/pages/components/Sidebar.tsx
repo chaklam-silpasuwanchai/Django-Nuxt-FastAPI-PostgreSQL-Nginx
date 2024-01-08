@@ -4,21 +4,24 @@ import Menu1 from "@/components/menus/Menu1";
 import Menu2 from "@/components/menus/Menu2";
 import Menu3 from "@/components/menus/Menu3";
 
+import Image from "next/image";
+
 export default function SidebarComponent() {
 
   const theme = "dark";
 
   return (
-    <Sidebar variant={theme} bg={theme} expand="sm">
+    <Sidebar variant={theme} bg={theme} expand="md" className="custom-sidebar">
       <Sidebar.Collapse getScrollValue={500}>
         <Sidebar.Header>
           <Sidebar.Brand>
-            <img
+            <Image
               src="/assets/logo192.png"
               alt=""
               height="24"
+              width="24"
               className="d-inline-block align-text-top icon-next-to-word"
-            ></img>
+            ></Image>
             ESG Reporting
           </Sidebar.Brand>
           <Sidebar.Toggle />

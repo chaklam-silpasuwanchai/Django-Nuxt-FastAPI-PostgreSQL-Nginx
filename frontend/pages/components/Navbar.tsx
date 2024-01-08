@@ -80,7 +80,7 @@ export default function NavbarComponent(props) {
             </NavDropdown>
             <Nav.Link href="#link">
               {bell}
-              <Badge style={{ marginLeft: "5px" }} className="badge-purple">
+              <Badge style={{ marginLeft: "5px" }} className="badge-purple d-none d-sm-inline">
                 9
               </Badge>
             </Nav.Link>

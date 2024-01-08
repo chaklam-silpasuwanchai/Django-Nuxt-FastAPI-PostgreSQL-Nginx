@@ -284,3 +284,11 @@ a {
 .btn:hover{
   background-color: #eee;
 }
+
+
+@media (max-width: 767px) {
+  .custom-sidebar {
+    // Add styles for smaller screens
+    width: 70px;
+  }
+}
