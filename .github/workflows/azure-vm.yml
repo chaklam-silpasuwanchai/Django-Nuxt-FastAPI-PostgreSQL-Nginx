@@ -10,6 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: 'Create env file'
+        run: |
+          echo "${{ secrets.REACT_DJANGO_ENV_FILE }}" > .env.dev
       - name: Build the stack
         run: docker compose build
       - name: Log into Docker Hub
