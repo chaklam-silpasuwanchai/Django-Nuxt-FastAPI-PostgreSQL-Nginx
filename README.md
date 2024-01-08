@@ -83,6 +83,19 @@ Containers, Services and Ports
 | dev-pgadmin| pgadmin | 5050      | 5050        |
 | dev-nginx  | nginx   | 8080      | 80          |
 
+## Deployment
+
+The idea is that to deploy to some server/cloud, we only build the images in local machines, and push these images to Dockerhub and any registry.  In the production machine (e.g., Azure), it should **only** have one __docker-compose.yml__ file along with a __.env[.dev|.prod]__ file.  **You do not clone the github repo in production machine**.     Every time we commit our GitHub, it executes __github actions__ that: 
+
+1. pull the latest git repo,
+2. call `docker-compose build`,
+3. push these images to Dockerhub or any registry, and then
+4. ssh into Azure, and tell Azure to `docker-compose pull` and `docker-compose up -d`.
+
+For sample __docker-compose.yml__ I used in the Azure VM, see the __archives__ folder.  Note that I removed all `.build` and `volumes` since both of them are not required in production.
+
+For sample github actions, see this repository workflow yml file.
+
 ## Useful Links
 
 There is nothing original here; I simply collect the best practices from the best.  Some GitHubs are outdated so I have to update them.
