@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" sm="12" md="6" xl="4">
-        <IndexProfile></IndexProfile>
+        <!-- <IndexProfile></IndexProfile> -->
         <v-row justify="center">
           <div style="width:80px;height:80px;position:relative; margin-top: 15px;"><iframe
               src="https://giphy.com/embed/gx54W1mSpeYMg" width="100%" height="100%" style="position:absolute"
@@ -79,4 +79,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const tab = ref(null)
+
+// definePageMeta({
+//   layout: 'document'
+// })
 </script>

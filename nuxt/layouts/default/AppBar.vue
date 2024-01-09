@@ -2,14 +2,11 @@
   <v-app-bar :elevation="2" color="primary" density="compact">
     <v-container class="mx-auto d-flex align-center justify-center">
       <!-- <v-app-bar-title> -->
-        <v-btn class="hidden-lg-and-up pull-btn" icon="mdi-menu" @click.stop="store.isOpen = !store.isOpen; console.log(store.isOpen)"></v-btn>
-        <v-icon icon="mdi-alpha-a-circle" />
-        <v-icon icon="mdi-alpha-s-box-outline" />
+        <v-btn icon="mdi-home" href="/"></v-btn>
+        <v-btn icon="mdi-flash" href="/another"></v-btn>
+        <v-btn href="/document">Document</v-btn>
       <!-- </v-app-bar-title> -->
       
-      <v-btn href="/">Home</v-btn>
-      <v-btn href="/projects">Projects</v-btn>
-      <v-btn href="/document">Document</v-btn>
       <v-spacer></v-spacer>
 
 
