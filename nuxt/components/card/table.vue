@@ -10,7 +10,7 @@
         v-if="pending" 
         :loading="pending"
         loading-text="Loading... Please wait"></v-data-table>
-      <v-data-table v-else :headers="headers" v-model="selected" :items="data.items" item-value="name" show-select
+      <v-data-table v-else  v-model="selected" :items="data" item-value="name" show-select
         v-model:search="search">
 
       </v-data-table>
@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-const { pending, data } = await useFetch('/api/hello', {
+const { pending, data } = await useFetch('/api/report', {
   lazy: true,
   server: false,
 })

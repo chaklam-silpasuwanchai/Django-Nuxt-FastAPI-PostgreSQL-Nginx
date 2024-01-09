@@ -5,7 +5,7 @@
         <CardTable></CardTable>
       </v-col>
       <v-col cols="12" lg="6">
-        <div>Object 2</div>
+        <CardTable></CardTable>
       </v-col>
     </v-row>
   </v-container>
