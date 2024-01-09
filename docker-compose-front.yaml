@@ -8,8 +8,6 @@ services:
       - ./nuxt:/root/project
       - node_modules-frontend:/root/project/node_modules
       - vscode-frontend:/root/.vscode-server
-    ports:
-      - 9000:3000
 
 volumes:
   vscode-frontend:

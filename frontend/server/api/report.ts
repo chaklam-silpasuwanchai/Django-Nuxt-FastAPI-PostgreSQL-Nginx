@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const data = await fetch('http://django:8000/api/report') 
+  const data = await fetch('http://backend:8000/api/report') 
   return data
 })
   
