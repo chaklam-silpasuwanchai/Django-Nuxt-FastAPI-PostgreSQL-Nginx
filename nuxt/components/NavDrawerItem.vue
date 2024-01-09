@@ -1,4 +1,3 @@
-
 <template>
   <template v-if="root">
     <v-list>
