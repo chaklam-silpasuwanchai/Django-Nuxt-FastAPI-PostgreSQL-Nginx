@@ -20,12 +20,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Push the react image to Docker Hub
-        run: docker push chaklams072/react
-      - name: Push the react image to Django Hub
-        run: docker push chaklams072/django
-      - name: Push the react image to Nginx Hub
-        run: docker push chaklams072/nginx
+      - name: Push the frontend image to Docker Hub
+        run: docker push chaklams072/template-frontend
+      - name: Push the backend image to Docker Hub
+        run: docker push chaklams072/template-backend
+      - name: Push the reverse proxy image to Docker Hub
+        run: docker push chaklams072/template-reverseproxy
       - name: Push the react image to Fastapi Hub
         run: docker push chaklams072/fastapi
       - name: Pull the image to VM
