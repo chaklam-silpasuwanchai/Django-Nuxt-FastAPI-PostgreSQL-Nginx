@@ -5,3 +5,5 @@ psycopg2>=2.9.9
 pytest-asyncio>=0.23.2
 pytest-django>=4.7.0
 gunicorn>=21.2.0
+pyodbc>=5.0.1
+django-pyodbc-azure>=2.1.0.0
