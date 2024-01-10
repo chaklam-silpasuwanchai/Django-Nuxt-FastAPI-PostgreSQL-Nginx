@@ -29,3 +29,5 @@ logs
 !.env.example
 react
 react_arch
+
+sql-connect.py
