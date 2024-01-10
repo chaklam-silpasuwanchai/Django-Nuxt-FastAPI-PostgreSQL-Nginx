@@ -82,10 +82,10 @@ DATABASES = {
     # }
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.environ.get("AZURE_SQL_NAME"),
-        "USER": os.environ.get("AZURE_SQL_USER"),
-        "PASSWORD": os.environ.get("AZURE_SQL_PASSWORD"),
-        "HOST": os.environ.get("AZURE_SQL_HOST"),
+        "NAME": "postgres",
+        "USER": "chaky",
+        "PASSWORD": "Ch@ky123",
+        "HOST": "esgpgsql.postgres.database.azure.com",
         "PORT": 5432,
         "OPTIONS": {
         #   'driver': 'ODBC Driver 13 for SQL Server',
