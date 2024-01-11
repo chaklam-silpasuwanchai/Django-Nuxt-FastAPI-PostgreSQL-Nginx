@@ -4,7 +4,7 @@
 
 A stack to quickly make web apps for AI-related applications.
 
-![Python version](https://img.shields.io/badge/Python-3.11.0-4c566a?logo=python&&longCache=true&logoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django version](https://img.shields.io/badge/Django-5.0.0-4c566a?logo=django&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django-RestFramework version](https://img.shields.io/badge/Django_Rest_Framework-3.14.0-red.svg?longCache=true&style=flat-square&logo=django&logoColor=white&colorA=4c566a&colorB=pink) ![Fastapi version](https://img.shields.io/badge/Fastapi-0.108.0-red.svg?longCache=true&style=flat-square&logo=fastapi&logoColor=white&colorA=4c566a&colorB=pink) ![PostgreSQL version](https://img.shields.io/badge/PostgreSQL-12.8-red.svg?longCache=true&style=flat-square&logo=postgresql&logoColor=white&colorA=4c566a&colorB=pink) ![Nuxt version](https://img.shields.io/badge/Nuxt-3.9.0-red.svg?longCache=true&style=flat-square&logo=nuxt&logoColor=white&colorA=4c566a&colorB=pink) ![Vuetify version](https://img.shields.io/badge/Vuetifffffffffy-3.4.9-red.svg?longCache=true&style=flat-square&logo=vuetiffffffy&logoColor=white&colorA=4c566a&colorB=pink)
+![Python version](https://img.shields.io/badge/Python-3.11.0-4c566a?logo=python&&longCache=true&logoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django version](https://img.shields.io/badge/Django-5.0.0-4c566a?logo=django&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django-RestFramework version](https://img.shields.io/badge/Django_Rest_Framework-3.14.0-red.svg?longCache=true&style=flat-square&logo=django&logoColor=white&colorA=4c566a&colorB=pink) ![Fastapi version](https://img.shields.io/badge/Fastapi-0.108.0-red.svg?longCache=true&style=flat-square&logo=fastapi&logoColor=white&colorA=4c566a&colorB=pink) ![PostgreSQL version](https://img.shields.io/badge/PostgreSQL-12.8-red.svg?longCache=true&style=flat-square&logo=postgresql&logoColor=white&colorA=4c566a&colorB=pink) ![Nuxt version](https://img.shields.io/badge/Nuxt-3.9.0-red.svg?longCache=true&style=flat-square&logo=nuxt&logoColor=white&colorA=4c566a&colorB=pink) ![Vuetify version](https://img.shields.io/badge/Vuetify-3.4.9-red.svg?longCache=true&style=flat-square&logo=vuetiffffffy&logoColor=white&colorA=4c566a&colorB=pink)
 
 </div>
 
@@ -12,7 +12,7 @@ A stack to quickly make web apps for AI-related applications.
 
 - __Django:__ This is the backbone of the backend API, and the packages installed are specified in the _requirements.txt_ file inside the __backend__ folder.
 
-- __Nuxt__:__ The __frontend__ library in use using __Nuxt.js__ framework.  __Nuxt.js__ is Vue + Next and is very popular framework in 2023 due to its simplicity. This was created via ``npx nuxi@latest``. The things pre-installed can be found in __package.json__.  __Vuetify__ is used for styling.
+- __Nuxt__:__ The __frontend__ library in use using __Nuxt.js__ framework.  __Nuxt.js__ is Vue + Next and is a very popular framework in 2023 due to its simplicity. This was created via ``npx nuxi@latest``. The things pre-installed can be found in __package.json__.  __Vuetify__ is used for styling.
 
   If you want to install more packages, simply `yarn add [pkg]` locally at the `frontend` directory.  Then observe that `package.json` got changed.  Docker will pick it up and install it on the container once you `docker-compose build` again.  If things do not install inside the container properly, simply delete all the associated volumes and images, delete the __node_modules__ folders, and `docker-compose build` from scratch.  It works well for me.
 
@@ -80,7 +80,6 @@ Containers, Services and Ports
 | dev-react  | react   | 3000      | 3000        |
 | dev-db     | db      | 5432      | 5432        |
 | dev-fastapi| fastapi | 8001      | 8001        |
-| dev-pgadmin| pgadmin | 5050      | 5050        |
 | dev-nginx  | nginx   | 8080      | 80          |
 
 ## Deployment
@@ -107,9 +106,3 @@ There is nothing original here; I simply collect the best practices from the bes
 - Michael Herman's article on testdriven.io: [dockerizing-django-with-postgres-gunicorn-and-nginx](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
 
 - Coby's GitHub - [https://github.com/cglusky/docker-django-react](https://github.com/cglusky/docker-django-react)
-
-## To-Do
-
-- SSL Certificate with CerBot
-- Deployment to Cloud
-- Setup CI/CD using GitHub Actions

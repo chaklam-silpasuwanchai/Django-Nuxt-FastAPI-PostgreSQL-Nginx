@@ -54,15 +54,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: dev-pgadmin
-    env_file: ./.env.dev
-    ports:
-      - "5050:5050"
-    depends_on:
-      - db
-
   nginx:
     image: chaklams072/template-reverseproxy
     build: 

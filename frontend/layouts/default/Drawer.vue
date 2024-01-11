@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false" floating>
-    <v-list-item title="ESG Reporting" prepend-icon="mdi-emoticon-cool-outline" nav>
+    <v-list-item title="ESG Redddporting" prepend-icon="mdi-emoticon-cool-outline" nav>
       <template v-slot:append>
         <v-btn variant="text" icon="mdi-chevron-left" @click.stop="rail = !rail"></v-btn>
       </template>
