@@ -91,9 +91,12 @@ The idea is that to deploy to some server/cloud, we only build the images in loc
 3. push these images to Dockerhub or any registry, and then
 4. ssh into Azure, and tell Azure to `docker-compose pull` and `docker-compose up -d`.
 
+In addition, you can replace some services with what's available in the cloud for ease of management.  For example, consider replacing postgresql with Azure database that supports postgresql or consider removing nginx since Azure supports connection between containers.   For fastapi, you can consider using gateway or function services provided by Azure.  Basically, when you fully used cloud services, you will later left with only the frontend and backend in the production machine.   But in the development machine, you will still used everything above for compiling.
+
 For sample __docker-compose.yml__ I used in the Azure VM, see the __archives__ folder.  Note that I removed all `.build` and `volumes` since both of them are not required in production.
 
 For sample GitHub actions, see this repository workflow YML file.
+
 
 ## Useful Links
 
