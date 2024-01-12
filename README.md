@@ -24,10 +24,6 @@ A stack to quickly make web apps for AI-related applications.
 
 ## Screenshot
 
-![Screenshot Image](./.readme_assets/Screenshot.png)
-
-## Architecture
-
 ![Architecture Image](./.readme_assets/Arch.jpg)
 
 ## Install (Run) with Docker
