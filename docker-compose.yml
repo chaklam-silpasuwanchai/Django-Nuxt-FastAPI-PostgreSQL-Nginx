@@ -26,9 +26,9 @@ services:
     platform: linux/amd64
     container_name: dev-nuxt
     command: yarn dev
-    # volumes:
-      # - ./frontend:/root/project
-      # - node_modules-frontend:/root/project/node_modules
+    volumes:
+      - ./frontend:/root/project
+      - node_modules:/root/project/node_modules
       # - vscode-frontend:/root/.vscode-server
     depends_on:
       - backend
@@ -78,5 +78,6 @@ volumes:
   static:
   vscode-django:
   vscode-frontend:
-  node_modules-frontend:
+  node_modules:
   vscode-fastapi:
+  frontend:
