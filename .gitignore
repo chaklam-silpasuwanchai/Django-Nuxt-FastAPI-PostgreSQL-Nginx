@@ -1,7 +1,4 @@
-# ignore .env.<ext> files like .env.dev but not .env-example
-.env.*
-
-**/.DS_Store
+.vscode-server
 
 # Nuxt dev/build outputs
 .output
@@ -27,7 +24,3 @@ logs
 .env
 .env.*
 !.env.example
-react
-react_arch
-
-sql-connect.py

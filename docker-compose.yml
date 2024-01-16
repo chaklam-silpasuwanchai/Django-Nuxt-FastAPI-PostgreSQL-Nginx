@@ -1,85 +1,19 @@
 version: "3.8"
 
 services:
-  backend:
-    image: chaklams072/template-backend
-    build:
-      context: ./backend
-    platform: linux/amd64
-    container_name: dev-django
-    command: gunicorn -b 0.0.0.0:8000 api.wsgi:application
-    env_file:
-      - ./.env.dev
-    volumes:
-      - ./backend/:/src/app
-      - static:/src/app/static
-      - media:/src/app/media
-      - vscode-django:/root/.vscode-server
-    depends_on:
-      - db
 
   frontend:
     image: chaklams072/template-frontend
     build:
-      context: ./frontend
-      dockerfile: nuxt.Dockerfile
+      context: .
+      dockerfile: Dockerfile
     platform: linux/amd64
-    container_name: dev-nuxt
-    command: yarn dev
+
     volumes:
-      - ./frontend:/root/project
-      - node_modules:/root/project/node_modules
-      # - vscode-frontend:/root/.vscode-server
+      - .:/root/project
+      - /root/project/node_modules
+      - .vscode-server/frontend:/root/.vscode-server
     environment:
       - CHOKIDAR_USEPOLLING=true
-    depends_on:
-      - backend
-      - fastapi
-
-  fastapi:
-    image: chaklams072/fastapi
-    build: 
-      context: ./model
-    platform: linux/amd64
-    container_name: dev-fastapi
-    command: uvicorn main:app --host 0.0.0.0 --port 8001 --root-path /fastapi
-    env_file:
-      - ./.env.dev
-    volumes:
-      - ./model/:/src/app
-      - vscode-fastapi:/root/.vscode-server
-
-  db:
-    image: postgres:16.1-alpine
-    container_name: dev-db
-    env_file: ./.env.dev
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  nginx:
-    image: chaklams072/template-reverseproxy
-    build: 
-      context: ./nginx
-    platform: linux/amd64
-    container_name: dev-nginx
     ports:
-      - 8080:80
-    restart: always
-    volumes:
-      - static:/src/app/static
-      - media:/src/app/media
-    depends_on:
-      - backend
-      - frontend
-      - db
-      - fastapi
-
-volumes:
-  postgres_data:
-  media:
-  static:
-  vscode-django:
-  vscode-frontend:
-  node_modules:
-  vscode-fastapi:
-  frontend:
+      - 3000:3000

@@ -28,6 +28,9 @@ export default defineNuxtConfig({
       }
     }
   },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
+  },
   vite: {
     vue: {
       template: {
@@ -42,5 +45,5 @@ export default defineNuxtConfig({
     port: 3000,
   },
   // buildDir: "/root/docs",
-  ssr: true
+  ssr: false
 })
