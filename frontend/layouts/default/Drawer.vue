@@ -9,7 +9,7 @@
     <v-divider></v-divider>
     <v-list nav density="compact">
       <v-list-subheader :class="{'d-none':rail}">
-        MENU 1
+        MENU Chaky
       </v-list-subheader>
       <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item>
       <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
