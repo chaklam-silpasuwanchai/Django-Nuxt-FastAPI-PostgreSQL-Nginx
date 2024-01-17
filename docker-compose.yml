@@ -29,7 +29,7 @@ services:
     volumes:
       - ./frontend:/root/project
       - node_modules:/root/project/node_modules
-      # - vscode-frontend:/root/.vscode-server
+      - vscode-frontend:/root/.vscode-server
     environment:
       - CHOKIDAR_USEPOLLING=true
     depends_on:
