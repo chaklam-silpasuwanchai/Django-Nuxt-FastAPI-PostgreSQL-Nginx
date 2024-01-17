@@ -12,13 +12,13 @@ A stack to quickly make web apps for AI-related applications.
 
 - **Django:** This is the backbone of the backend API, and the packages installed are specified in the _requirements.txt_ file inside the **backend** folder.
 
-- **Nuxt**:** The **frontend** library in use using **Nuxt.js** framework. **Nuxt.js** is Vue + Next and is a very popular framework in 2023 due to its simplicity. This was created via `npx nuxi@latest`. The things pre-installed can be found in **package.json**. **Vuetify\_\_ is used for styling.
+- **Nuxt**: The **frontend** library in use using **Nuxt.js** framework. **Nuxt.js** is Vue + Next and is a very popular framework in 2023 due to its simplicity. This was created via `npx nuxi@latest`. The things pre-installed can be found in **package.json**. **Vuetify\_\_ is used for styling.
 
-  If you want to install more packages, simply `yarn add [pkg]` locally at the `frontend` directory. Then observe that `package.json` got changed. Docker will pick it up and install it on the container once you `docker-compose build` again. If things do not install inside the container properly, simply delete all the associated volumes and images, delete the **node_modules** folders, and `docker-compose build` from scratch. It works well for me.
+  If you want to install more packages, simply `yarn add [pkg]` locally at the **frontend** directory. Then observe that **package.json** got changed. Docker will pick it up and install it on the container once you `docker compose build` again. If things do not install inside the container properly, simply delete all the associated volumes and images, delete the **node_modules** folders, and `docker compose build` from scratch. It works well for me.
 
 - **Nginx:** This is the server for the Docker-Compose testing build. The default configuration in use can be found at the **nginx/nginx.conf** file. Serves Django's static and media files as well. In the **Nginx**, I have set such that Django can be accessed via `api`, `admin`, and `ws`(websocket). See conf for details.
 
-- **PostgreSQL:** This is the default configured database for this repository. Pgadmin is pre-installed in the **docker-compose.yml**
+- **PostgreSQL:** This is the default configured database for this repository.
 
 - **Fastapi:** Refers to the **model** folder for handling API access to deep learning models or large language models.
 
@@ -28,14 +28,15 @@ A stack to quickly make web apps for AI-related applications.
 
 ## Install (Run) with Docker
 
-1. Since I cannot share my `.env.dev` file with you guys, I have created an example. Rename `.env-example` to `.env.dev`
+1. Since I cannot share my **.env.dev** file with you guys, I have created an example. Rename **.env-example** to **.env.dev**
 
-1. Note: Ensure that the entrypoint.sh script in Django-React\backend\entrypoint.sh uses LF EOL format and not CRLF.
+1. Note for Window users: Ensure that the **entrypoint.sh** script in `Django-React\backend\entrypoint.sh` uses LF EOL format and not CRLF.
 
 1. Run Docker-Compose:
 
    ```bash
-   docker-compose up -d --build
+   $> docker compose build
+   $> docker compose up
    ```
 
    Congratulations !!! The app should be up and running. To access the **Nuxt** frontend go to [localhost:8080](http://localhost:8080), and to access the **Django** backend go to [localhost:8080/api](http://localhost:8080/api), and to access the **Fastapi** go to [localhost:8080/fastapi/docs](http://localhost:8080/fastapi/docs/). I have disabled all ports such as 3000, 8000, and 8001, so everything is managed by nginx.
@@ -43,7 +44,7 @@ A stack to quickly make web apps for AI-related applications.
 1. To create a super user:
 
    ```bash
-   docker exec -it [container id of the django] python manage.py createsuperuser
+   $> docker exec -it [container id of the django] python manage.py createsuperuser
    ```
 
    You can get the container ID from `docker container list`
@@ -66,7 +67,7 @@ This repository is divided into 4 main folders. These folders are:
 
 Enter shell for the specified container (must be running)
 
-```sh
+```bash
 $> docker exec -it <container-name> bash
 ```
 
