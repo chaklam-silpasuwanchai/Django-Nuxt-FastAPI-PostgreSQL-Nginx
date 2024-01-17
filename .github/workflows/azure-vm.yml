@@ -1,8 +1,9 @@
 name: Deploy to Azure VM by pulling from docker hub
 
-on:
-  push:
-    branches: [ "main" ]
+#uncomment these lines for it to work
+# on:
+#   push:
+#     branches: [ "main" ]
 
 jobs:
   build:
