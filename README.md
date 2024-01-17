@@ -67,7 +67,7 @@ This repository is divided into 4 main folders. These folders are:
 Enter shell for the specified container (must be running)
 
 ```sh
-$> docker exec -it <container-name> sh
+$> docker exec -it <container-name> bash
 ```
 
 Containers, Services and Ports
